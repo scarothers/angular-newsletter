@@ -2,31 +2,130 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang="en" class="no-js" ng-app="newsletterPreview"> <!--<![endif]-->
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rainbow newsletter content</title>
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<body ng-controller="StoriesController">
 
-  <div ng-view></div>
+<p align="center"> 
+  The newsletter data was last updated at: {{stories.lmt | date: 'short'}} 
+</p>
 
-  <div>Angular seed app: v<span app-version></span></div>
+
+<div class="container"> <!-- Begin Bootstrap container -->
+
+
+<div class="row"> <!-- Begin Bootstrap row -->
+
+
+<div class="col-lg-6"> <!-- Begin Bootstrap left-hand column -->
+<div style="height:600px; overflow:scroll; padding:5px;"> <!-- Contain preview in scrollable box -->
+
+<!-- begin body_table-->
+<table id="body_table" width="100%">
+  <tr>
+    <td align="center" valign="top">
+ 
+      <!-- begin outer_table -->
+      <table id="outer_table" align="center" border="0">
+        <tr>
+          <td class="second-td" align="center" valign="top" width="480">
+
+
+            <!-- begin view on the web table -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td align="center" class="hosted-link" valign="top">
+                  <a href="#">
+                    VIEW ON THE WEB  &gt; 
+                  </a>
+                </td>
+              </tr>
+            </table> <!-- end view on the web table -->
+
+
+
+
+            <!-- begin story table -->
+            <table ng-repeat="story in stories.contenturls" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td align="center" style="padding-bottom: 20px" valign="top">
+
+                  <!-- begin bright table -->
+                  <table align="center" border="0" cellpadding="0" cellspacing="0" width="95%">
+                    <tr>
+                      <td class="story-td" align="center">
+                        <a href="{{story.publishedurl}}" target="_blank" class="story-link">
+                          <img alt="{{story.title}}" border="0" ng-src={{story.items[0].imageURL}} class="story-image" width="580" />
+                        </a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td align="left" class="article-content">
+
+                        <!-- begin blurb table -->
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td align="left" class="blurb">
+                              {{story.items[0].instructions}}
+                            </td>
+                          </tr>
+
+
+                          <!-- Take out MORE link to give more reading space 
+                          <tr>
+                            <td align="left" class="more-link">
+                              <a href={{story.publishedurl}} target="_blank" class="story-link">
+                              <img alt="More" border="0" src="http://www.washingtonpost.com/news/tablet/wp-content/uploads/sites/39/2015/04/More-Button-550.png" class="more-button" />
+                            </a>
+                            </td>
+                          </tr> -->
+
+                        </table> <!-- end blurb table -->
+
+                      </td>
+                    </tr>
+                  </table> <!-- end bright table -->
+
+                </td>
+              </tr>
+            </table> <!-- end story table -->
+
+
+
+
+          </td>
+        </tr>
+      </table> <!-- end outer_table -->
+
+    </td>
+  </tr>
+</table> <!-- end body_table -->
+
+</div> <!-- end scroll box div -->
+</div> <!-- end Bootstrap left-side div -->
+
+
+<div class="col-lg-6"> <!-- Begin Bootstrap right-hand column -->
+  Where will this text show up? Who knows. 
+</div> <!-- end Bootstrap right-side div -->
+
+</div> <!-- end Bootstrap row -->
+</div> <!-- end Bootstrap container -->
+
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -34,8 +133,8 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

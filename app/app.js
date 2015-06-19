@@ -1,12 +1,11 @@
-'use strict';
+var app = angular.module('newsletterPreview', []);
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+app.controller('StoriesController', function ($scope, $http){
+	$http.get('sample-data.json')
+	.then(function(res){
+		$scope.stories = res.data;
+	})
+});
+
+// Test live data again 
+// This is the working local copy: 'sample-data.json'
