@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rainbow newsletter content</title>
+  <title>Newsletter stories [Rainbow]</title>
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  
@@ -19,9 +19,9 @@
 
 <body ng-controller="StoriesController">
 
-<p align="center"> 
+<h5 align="center"> 
   The newsletter data was last updated at: {{stories.lmt | date: 'short'}} 
-</p>
+</h5>
 
 
 <div class="container"> <!-- Begin Bootstrap container -->
@@ -59,7 +59,7 @@
 
 
             <!-- begin story table -->
-            <table ng-repeat="story in stories.contenturls" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <table ng-repeat="story in stories.contenturls" ng-mouseover="highlightStory()" border="0" cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td align="center" style="padding-bottom: 20px" valign="top">
 
@@ -120,7 +120,14 @@
 
 
 <div class="col-md-6"> <!-- Begin Bootstrap right-hand column -->
-  Where will this text show up? Who knows. 
+<h3>Stories in the newsletter section:</h3>
+<ul class="list-group"> 
+  <li class="list-group-item" ng-repeat="story in stories.contenturls" id="{{$index}}">
+     <a href="http://rainbowtool.wpprivate.com/pb/admin/console/editor/page/{{story.id}}" target="_blank" class="story-link">
+      {{story.title}}
+     </a>
+  </li>
+</ul> 
 </div> <!-- end Bootstrap right-side div -->
 
 </div> <!-- end Bootstrap row -->
@@ -130,10 +137,10 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>

@@ -5,7 +5,8 @@ app.controller('StoriesController', function ($scope, $http){
 	.then(function(res){
 		$scope.stories = res.data;
 	})
-});
+		$scope.highlightStory = function(){
+		angular.element('$index').addClass("hover-newsletter")
+	}
 
-// Test live data again 
-// This is the working local copy: 'sample-data.json'
+});
