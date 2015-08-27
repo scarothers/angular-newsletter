@@ -17,24 +17,19 @@
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 
-<body ng-controller="StoriesController">
+<body ng-controller="StoriesController" style="overflow:hidden">
 
-<h5 align="center"> 
-  The newsletter data was last updated at: {{stories.lmt | date: 'short'}} 
-</h5>
+<h5 align="center"> The newsletter data was last updated at: {{stories.lmt | date: 'short'}} </h5>
 
 
 <div class="container"> <!-- Begin Bootstrap container -->
-
-
 <div class="row"> <!-- Begin Bootstrap row -->
 
 
 <div class="col-md-6"> <!-- Begin Bootstrap left-hand column -->
-<div style="height:600px; overflow:scroll; padding:5px;"> <!-- Contain preview in scrollable box -->
-
-<!-- begin body_table-->
-<table id="body_table" width="100%">
+<h3>Content preview:</h3>
+<div style="height:500px; overflow-y:scroll; min-width:0; min-height:0; padding:5px;"> <!-- Begin scroll box div -->
+<table id="body_table" width="100%"><!-- begin body_table-->
   <tr>
     <td align="center" valign="top">
  
@@ -114,9 +109,8 @@
     </td>
   </tr>
 </table> <!-- end body_table -->
-
 </div> <!-- end scroll box div -->
-</div> <!-- end Bootstrap left-side div -->
+</div> <!-- end Bootstrap left-hand column -->
 
 
 <div class="col-md-6"> <!-- Begin Bootstrap right-hand column -->
@@ -128,22 +122,21 @@
      </a>
   </li>
 </ul> 
-</div> <!-- end Bootstrap right-side div -->
+</div> <!-- end Bootstrap right-hand column -->
+
 
 </div> <!-- end Bootstrap row -->
 </div> <!-- end Bootstrap container -->
 
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+
 </body>
 </html>
