@@ -1,7 +1,6 @@
 var request = require('request');
 var http = require('http');
 var PORT = 1234;
-var jsonfile = require('jsonfile')
 var fs = require('fs');
 
 
@@ -15,15 +14,10 @@ function handleRequest(req, res) {
     }, function (err, result) {
         res.end(result.body);
 
-        fs.writeFile('/app/data.json', result.body, function (err) {
+        fs.writeFile('app/data.json', result.body, function (err) {
             if (err) return console.log(err);
             console.log('Hello World > helloworld.txt');
         });
-
-        // var file = '/data.json'
-            //jsonfile.writeFile(file, 'test', function (err) {
-            //console.error(err)
-        //})
 
     });
 }
