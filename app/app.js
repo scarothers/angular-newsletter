@@ -1,7 +1,7 @@
 var app = angular.module('newsletterPreview', []);
 
 app.controller('StoriesController', function ($scope, $http){
-	$http.get('http://localhost:1234/')
+	$http.get('http://0.0.0.0:1234/')
 	$http.get('data.json')
 	.then(function(res){
 		$scope.stories = res.data;
