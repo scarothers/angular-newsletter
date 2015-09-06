@@ -1,6 +1,6 @@
 var request = require('request');
 var http = require('http');
-var port = process.env.PORT || 5000
+var port = 5000
 var fs = require('fs');
 
 
