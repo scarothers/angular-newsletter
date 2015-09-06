@@ -1,5 +1,3 @@
-import node-server.js
-
 var app = angular.module('newsletterPreview', []);
 
 app.controller('StoriesController', function ($scope, $http){
@@ -11,6 +9,5 @@ app.controller('StoriesController', function ($scope, $http){
 		$scope.highlightStory = function(){
 		angular.element('$index').addClass("hover-newsletter")
 	}
-
 
 });
