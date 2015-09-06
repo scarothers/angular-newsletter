@@ -1,7 +1,7 @@
 var app = angular.module('newsletterPreview', []);
 
 app.controller('StoriesController', function ($scope, $http){
-	callurl = 'http://0.0.0.0:15000'
+	callurl = 'http://0.0.0.0:1234'
 	$http.get(callurl)
 	$http.get('data.json')
 	.then(function(res){
