@@ -20,7 +20,7 @@
 <body ng-controller="StoriesController" style="overflow:hidden">
 
 <h5 align="center"> The newsletter data last updated at: {{stories.lmt | date: 'short'}} </h5>
-<h5 align="center"> <a href="https://docs.google.com/document/d/1Vnq6skH4HDyLmGUNMVfMCKf7IlX51OsLDjfvszFxY2Q/edit" class="btn btn-default" role="button" target="_blank">How to doc</a>  |   Subject line: {{stories.subject}}</h5>
+<p align="center"> <a href="https://docs.google.com/document/d/1Vnq6skH4HDyLmGUNMVfMCKf7IlX51OsLDjfvszFxY2Q/edit" class="btn btn-default"role="button" target="_blank">How to doc</a>  |   <b>Subject line</b>: {{stories.subject}}</p>
 
 
 <div class="container"> <!-- Begin Bootstrap container -->
@@ -73,7 +73,7 @@
                       <td align="left" class="article-content">
 
                         <!-- begin blurb table -->
-                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <table ng-if="!$first" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr>
                             <td align="left" class="blurb">
                               {{story.items[0].instructions}}
