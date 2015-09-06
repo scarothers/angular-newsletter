@@ -20,7 +20,7 @@
 <body ng-controller="StoriesController" style="overflow:hidden">
 
 <h5 align="center"> The newsletter data last updated at: {{stories.lmt | date: 'short'}} </h5>
-<h5 align="center"> <button type="button" class="btn btn-info"> <a href="https://docs.google.com/document/d/1Vnq6skH4HDyLmGUNMVfMCKf7IlX51OsLDjfvszFxY2Q/edit" target="_blank">How to doc</a></button>   |   Subject line: {{stories.subject}}</h5>
+<h5 align="center"> <a href="https://docs.google.com/document/d/1Vnq6skH4HDyLmGUNMVfMCKf7IlX51OsLDjfvszFxY2Q/edit" class="btn btn-default" role="button" target="_blank">How to doc</a>  |   Subject line: {{stories.subject}}</h5>
 
 
 <div class="container"> <!-- Begin Bootstrap container -->
@@ -28,7 +28,7 @@
 
 
 <div class="col-md-6"> <!-- Begin Bootstrap left-hand column -->
-<h3 align="center">A [regular] <button type="button" class="btn btn-info"> <a href="http://rainbowtool.wpprivate.com/pb/admin/console/sections" target="_blank"class="info">reorder</a> </button> </h3>
+<h3 align="center">A [regular] <a href="http://rainbowtool.wpprivate.com/pb/admin/console/sections" class="btn btn-default" target="_blank" role="button">reorder</a> </button> </h3>
 <div style="height:500px; overflow-y:scroll; min-width:0; min-height:0; padding:5px;"> <!-- Begin scroll box div -->
 <table id="body_table" width="100%"><!-- begin body_table-->
   <tr>
@@ -130,7 +130,7 @@
 
 
 <div class="col-md-6"> <!-- Begin Bootstrap RIGHT-hand column -->
-<h3 align="center">B [horizontal] <button type="button" class="btn btn-info"><a href="https://my.sailthru.com/template/#5061999" target="_blank">SailThru preview</a></button></h3>
+<h3 align="center">B [horizontal] <a class="btn btn-default" href="https://my.sailthru.com/template/#5061999" role="button" target="_blank">SailThru preview </a></h3>
 <div style="height:500px; overflow-y:scroll; min-width:0; min-height:0; padding:5px;"> <!-- Begin scroll box div -->
 <table id="body_table" width="100%"><!-- begin body_table-->
   <tr>
