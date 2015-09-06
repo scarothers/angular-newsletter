@@ -1,6 +1,6 @@
 var request = require('request');
 var http = require('http');
-var PORT = 1234;
+var port = process.env.PORT || 5000
 var fs = require('fs');
 
 
@@ -16,7 +16,7 @@ function handleRequest(req, res) {
 
         fs.writeFile('app/data.json', result.body, function (err) {
             if (err) return console.log(err);
-            console.log('Hello World > helloworld.txt');
+            console.log('API data > data.json');
         });
 
     });
@@ -26,7 +26,7 @@ function handleRequest(req, res) {
 var server = http.createServer(handleRequest);
 
 //Lets start our server
-server.listen(PORT, function () {
+server.listen(port, function () {
     //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening on: http://0.0.0.0:%s", PORT);
+    console.log("Server listening on: http://0.0.0.0:%d", port);
 });
