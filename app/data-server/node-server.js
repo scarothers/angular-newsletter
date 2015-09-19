@@ -1,6 +1,6 @@
 var request = require('request');
 var http = require('http');
-var port = process.env.PORT || 1234
+var port2 = process.env.PORT || 1234
 var fs = require('fs');
 
 
@@ -26,7 +26,7 @@ function handleRequest(req, res) {
 var server = http.createServer(handleRequest);
 
 //Lets start our server
-server.listen(port, function () {
+server.listen(port2, function () {
     //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening on: http://0.0.0.0:%d", port);
+    console.log("Server listening on: http://0.0.0.0:%d", port2);
 });
