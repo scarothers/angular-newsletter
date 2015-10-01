@@ -1,6 +1,6 @@
 var request = require('request');
 var http = require('http');
-var port2 = process.env.PORT || 1234
+var port2 = 1234
 var fs = require('fs');
 
 
