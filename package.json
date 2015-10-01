@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "engines": {
-    "node": "0.10.32",
-    "npm": "2.5.1"
+    "node": "0.10.38",
+    "npm": "2.0.0"
   },
   "description": "A starter project for AngularJS",
   "repository": "https://github.com/angular/angular-seed",
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "prestart": "npm install",
-    "start": "http-server -a 0.0.0.0 -p 8000 -c-1 & node app/data-server/node-server.js",
+    "start": "node app.js & node app/data-server/node-server.js",
     "postinstall": "./node_modules/bower/bin/bower install",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",

@@ -3,6 +3,7 @@ logs/*
 node_modules/
 bower_components/
 tmp
+.env/*
 .DS_Store
 .idea
 # Elastic Beanstalk Files
