@@ -1,1 +1,1 @@
-web: node app.js & node node-server.js
+web: node main.js & node node-server.js
