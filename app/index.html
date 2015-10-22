@@ -21,6 +21,7 @@
 
 <h5 align="center"> The newsletter data last updated at: {{stories.lmt | date: 'short'}} </h5>
 <p align="center"> <a href="https://docs.google.com/document/d/1Vnq6skH4HDyLmGUNMVfMCKf7IlX51OsLDjfvszFxY2Q/edit" class="btn btn-default"role="button" target="_blank">How to doc</a>  |   <b>Subject line</b>: {{stories.subject}}</p>
+<p align="center"><b>Inbox preview</b>: <i>{{stories.contenturls[4].title}}</i></p>
 
 
 <div class="container"> <!-- Begin Bootstrap container -->
@@ -62,38 +63,53 @@
                   <!-- begin bright table -->
                   <table align="center" border="0" cellpadding="0" cellspacing="0" width="95%">
                     <tr>
-                      <td class="story-td" align="center">
+
+                      <!--BEGIN NG-IF STATEMENTS -->
+                        <td ng-if="story.items[0].type=='image'" class="story-td" align="center">
+                          <a href="http://rainbowtool.wpprivate.com/pb/admin/console/editor/page/{{story.id}}" target="_blank" class="story-link">
+                            <img alt="{{story.title}}" border="0" ng-src={{story.items[0].imageURL}} class="story-image" width="580" />
+                          </a>
+                        </td>
+
+
+                      <tr ng-if="story.items[0].type=='top_deck'">
+                        <td class="autobright-top-deck" style="color: #161616; font-family: Georgia, serif; font-size: 20px; font-weight: bold; font-style: italic; line-height: 1.1; text-align: center; padding: 0px 10px 10px 10px; margin: 0px;">
+                          <a href="http://rainbowtool.wpprivate.com/pb/admin/console/editor/page/{{story.id}}" target="_blank" style="color: #161616 !important; text-decoration: none !important;">
+                            <span style="color: #161616; text-decoration: none;">
+                            {{story.items[0].content}}
+                            </span>
+                          </a>
+                        </td>
+                      </tr>
+
+
+                      <tr ng-if="story.items[1].type=='image'">
+                        <td align="center" class="story-td">
+                          <a href="http://rainbowtool.wpprivate.com/pb/admin/console/editor/page/{{story.id}}" target="_blank" class="story-link">
+                            <img alt="{story.title}" border="0" ng-src={{story.items[1].imageURL}} class="story-image" width="580" />
+                          </a>
+                        </td>
+                      </tr>
+
+
+                    <tr ng-if="story.items[1].type=='animated_video'">
+                      <td align="center" class="story-td">
                         <a href="http://rainbowtool.wpprivate.com/pb/admin/console/editor/page/{{story.id}}" target="_blank" class="story-link">
-                          <img alt="{{story.title}}" border="0" ng-src={{story.items[0].imageURL}} class="story-image" width="580" />
+                          <img alt="{story.title}" border="0" ng-src="{{story.items[1].gifUrl}}" class="story-image" width="580" />
                         </a>
                       </td>
                     </tr>
 
+
+
+                    <!--END NG-IF STATEMENTS -->
+                    </tr>
+
                     <tr>
                       <td align="left" class="article-content">
-
-                        <!-- begin blurb table -->
-                        <table ng-if="!$first" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
-                          <tr>
-                            <td align="left" class="blurb">
-                              {{story.items[0].instructions}}
-                            </td>
-                          </tr>
-
-
-                          <!-- Take out MORE link to give more reading space 
-                          <tr>
-                            <td align="left" class="more-link">
-                              <a href={{story.publishedurl}} target="_blank" class="story-link">
-                              <img alt="More" border="0" src="http://www.washingtonpost.com/news/tablet/wp-content/uploads/sites/39/2015/04/More-Button-550.png" class="more-button" />
-                            </a>
-                            </td>
-                          </tr> -->
-
-                        </table> <!-- end blurb table -->
-
                       </td>
                     </tr>
+                    
                   </table> <!-- end bright table -->
 
                 </td>
