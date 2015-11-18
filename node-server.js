@@ -15,7 +15,7 @@ function handleRequest(req, res) {
         //Allow access on local
         //res.setHeader('Access-Control-Allow-Origin', 'http://0.0.0.0:3000');
         //Allow acccess on prod
-        res.setHeader('Access-Control-Allow-Origin', 'http://52.26.239.23:3000');
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.end(result.body);
 
         fs.writeFile('app/data.json', result.body, function (err) {
