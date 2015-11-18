@@ -12,6 +12,10 @@ function handleRequest(req, res) {
             url: 'http://rainbowtool.wpprivate.com/pb/newsletter/?content=true'
         }
     }, function (err, result) {
+        //Allow access on local
+        //res.setHeader('Access-Control-Allow-Origin', 'http://0.0.0.0:3000');
+        //Allow acccess on prod
+        res.setHeader('Access-Control-Allow-Origin', 'http://52.26.239.23:3000');
         res.end(result.body);
 
         fs.writeFile('app/data.json', result.body, function (err) {
