@@ -1,0 +1,37 @@
+{
+  "cluster": "alpine.nile.works",
+  "port": 3000,
+  "routes": [
+    {
+      "paths": ["/"]
+    }
+  ],
+  "builds": [{"notify": "rainbow-alerts", "branch": "master", "version": "1.0.0", "tags": ["latest"], "autodeploy": true}],
+  "environment": {
+  },
+  "stages": [{
+    "name": "test",
+    "domain": "rainbow-newsletter-test.wpit.nile.works",
+    "scale": 1,
+    "environment": {
+      "NODE_ENV":"production",
+      "PRODUCTION_PORT": "80"
+    }
+  },{
+    "name": "prod",
+    "scale": 1,
+    "domain": "rainbow-newsletter.wpit.nile.works",
+    "environment": {
+      "NODE_ENV":"production",
+      "PRODUCTION_PORT": "80"
+    }
+  },{
+    "name": "alpine",
+    "scale": 1,
+    "domain": "rainbow-newsletter.internal.alpine.nile.works",
+    "environment": {
+      "NODE_ENV":"production",
+      "PRODUCTION_PORT": "80"
+    }
+  }]
+}
