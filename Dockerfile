@@ -20,6 +20,16 @@ CMD ["forever", "-c", "npm start", "./"]
 
 
 # HOW TO 
+# Run a container and specify the port mappings: 
+# docker run -t -p 3000:3000 -p 5000:5000 scarothers/angular-newsletter 
+
 # Rebuild the image after changes:   docker build -t scarothers/angular-newsletter .
 # Re-start the container:     docker stop         THEN        docker run -t -P scarothers/angular-newsletter
 # SSH into running container:  'docker exec -it [CONTAINER ID] bash'
+
+# Get IP address of container: 
+# docker-machine ip default
+
+# See all containers 
+# docker ps -l
+
